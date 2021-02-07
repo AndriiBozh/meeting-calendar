@@ -1,0 +1,325 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fdfeeb;
+}
+
+.container {
+  padding: 20px;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-title {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  -webkit-box-flex: 2;
+  -ms-flex: 2 0 0px;
+  flex: 2 0 0;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #241d31;
+  font-size: 2rem;
+}
+
+.nav-controls select {
+  -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 7px;
+  margin: 10px 20px 10px 10px;
+  border: 1px solid #241d31;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #241d31;
+  width: 250px;
+  cursor: pointer;
+}
+
+.nav-controls button {
+  -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 7px 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: #286c28;
+  border: 1px solid #241d31;
+  border-radius: 3px;
+}
+
+button,
+input,
+select,
+option {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  color: #f2f2e9;
+}
+
+button:hover {
+  -webkit-filter: brightness(120%);
+  filter: brightness(120%);
+}
+
+button:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  -webkit-filter: brightness(130%);
+  filter: brightness(130%);
+}
+
+table {
+  -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border-spacing: 0px;
+  table-layout: fixed;
+  border-radius: 3px;
+}
+
+table .first-row-title th {
+  background-color: #726d72;
+  color: #f7f5f6;
+  letter-spacing: 3px;
+  padding: 10px 0;
+}
+
+table .first-row-title th:not(:last-of-type) {
+  border-right: 2px solid #c1b6c4;
+}
+
+table td.time {
+  width: 100px;
+  padding: 10px 0;
+  font-weight: bold;
+  text-align: center;
+  color: #241d31;
+}
+
+table,
+th,
+td {
+  border: 1px solid #726d72;
+}
+
+.popup-window {
+  max-width: 70%;
+  width: 440px;
+  border: 2px solid black;
+  border-radius: 5px;
+  /* to make popout form visible against a background of the overlay*/
+  background-color: #fdfeeb;
+  color: #241d31;
+  padding: 10px 20px;
+  position: fixed;
+  /* center the element --- start ----*/
+  /* top:, left: refer to the size of the screen */
+  top: 50%;
+  left: 50%;
+  /* scale(0) hides our popup form */
+  /* transform: translate() refer to the size of the element's container */
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
+  /* make the form appear smoothly (we should add the same to our #overlay, so they appear simultaneously. transition works with a scale() function, it doesn't work with 'display: none' */
+  -webkit-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+  /* center the element --- end -----*/
+  z-index: 10;
+}
+
+.popup-window.active {
+  /* show popup form by adding class .active and changing scale() from 0 to 1: scale(0) ==> scale(1) */
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-window button {
+  -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 7px 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: 1px solid #241d31;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #f2f2e9;
+}
+
+.popup-form-header {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 10px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #726d72;
+  margin-bottom: 20px;
+}
+
+/* align input forms */
+.add-event-form label {
+  width: 170px;
+  display: inline-block;
+  letter-spacing: 1px;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.add-event-form .item {
+  padding: 0px 5px 10px 10px;
+  font-weight: bold;
+}
+
+.add-event-form input {
+  padding: 5px 25px 5px 10px;
+}
+
+.add-event-form select {
+  width: 140px;
+  text-align: center;
+  border: 1px solid #c1b6c4;
+  border-radius: 3px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 5px 7px;
+}
+
+.add-event-form .control-buttons {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.add-event-form .cancel-button {
+  background-color: #e2ab66;
+  color: #241d31;
+}
+
+.add-event-form .create-button {
+  background-color: #286c28;
+}
+
+.cancel-button,
+.confirm-delete {
+  margin-left: 5px;
+}
+
+.create-button,
+.cancel-delete {
+  margin-right: 5px;
+}
+
+.cell-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.fill-cell {
+  background-color: #d3e59c;
+}
+
+.close {
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: none;
+  background: none;
+  color: #be4f6c;
+}
+
+.close:hover {
+  cursor: pointer;
+  color: #f40644;
+}
+
+.popup-edit {
+  height: 100px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.popup-edit p {
+  padding: 9px 0 16px 0;
+  letter-spacing: 1px;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup-edit button {
+  background-color: #e2ab66;
+  color: #241d31;
+  padding: 4px 19px;
+}
+
+.popup-confirm {
+  height: 125px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.popup-confirm p {
+  padding: 10px 0 22px 0;
+  letter-spacing: 1px;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup-confirm .cancel-delete {
+  background-color: #e2ab66;
+  color: #f2f2e9;
+  padding: 4px 15px;
+}
+
+.popup-confirm .confirm-delete {
+  background-color: #be4f6c;
+  color: #241d31;
+  padding: 4px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  /* make the overlay appear smoothly  */
+  -webkit-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+  /* make the overlay fill the entire screen ---- start ----- */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* make overlay fill the entire screen ---- end ----- */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* to be able to click buttons, when the overlay is not active (that is, when it's invisible (opacity: 0) */
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.filtered-accent {
+  background-color: #daa973;
+}
+/*# sourceMappingURL=meeting-planning.css.map */
