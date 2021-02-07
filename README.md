@@ -11,11 +11,12 @@
         after user presses the delete symbol, a popup window appears, asking user to confirm their action.
           in case user confirms deletion, event disappears from the calendar, name of participant of this event disappears from 'participants' list and popup window disappears
           in case user doesn't want to delete event, they can click 'cancel' button or click anywhere on the screen (outside the popup window) and popup window will disappear
-   after the event was added to the calendar, a name of the participant is added to the 'participants' list. 
-      User can find this list in a 'select' element, which is in the upper right corner of the screen (near the 'add event +' button).
-      after user clicks on 'select' element, a list of users appears.
-      if user selects a name, all events in the calendar, having this user as a participant, change their color.      
-      user can select to show 'all members' (default value), then all events are displayed with their original color
+      after the event was added to the calendar, a name of the participant is added to the 'participants' list. 
+        User can find this list in a 'select' element, which is in the upper right corner of the screen (near the 'add event +' button).
+        after user clicks on 'select' element, a list of users appears.
+        if user selects a name, all events in the calendar, having this user as a participant, change their color.      
+        user can select to show 'all members' (default value), then all events are displayed with their original color
+   
       
     
     
